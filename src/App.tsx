@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 import HomePage from "./Homepage";
 import {Routes, Route} from 'react-router';
 import Contact from './Contact'
+import About from './About';
+import Services from './Services';
 
 const client = generateClient<Schema>();
 
@@ -54,8 +56,8 @@ function App() {
       </header>
       <Routes>
         <Route path="/" element={<HomePage/>} />
-        <Route path="/services" element={<h1>Services Page</h1>} />
-        <Route path="/about" element={<h1>About Page</h1>} />
+        <Route path="/services" element={<Services/>} />
+        <Route path="/about" element={<About/>} />
         <Route path="/contact" element={<Contact/>} />
       </Routes>
     </div>

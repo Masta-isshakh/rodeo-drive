@@ -209,7 +209,7 @@ export default function HomePage() {
       <section className="cta-section">
         <h2>Ready to Transform Your Vehicle?</h2>
         <p>Contact us now and experience Qatar’s premium car-care standards.</p>
-        <a className="cta-btn" href="#contact">
+        <a className="cta-btn" href="/Contact">
           Book an Appointment
         </a>
       </section>
