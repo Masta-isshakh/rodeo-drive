@@ -29,7 +29,7 @@ function App() {
       <header className={menuOpen ? "open" : ""}>
         <div className="logo">
           <img
-            src="/src/assets/logo.jpeg"
+            src="/src/assets/logo.png"
             alt="Rodeo Drive Logo"
             className="logo-img"
           />

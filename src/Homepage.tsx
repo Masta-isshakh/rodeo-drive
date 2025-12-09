@@ -11,7 +11,7 @@ export default function HomePage() {
       {/* Video Carousel */}
       <div className="video-carousel">
         <video autoPlay loop muted>
-          <source src="/src/assets/video.mp4" type="video/mp4" />
+          <source src="https://mastatiktok.s3.us-east-1.amazonaws.com/video.mp4" type="video/mp4" />
         </video>
 
         {/* Text over video */}
