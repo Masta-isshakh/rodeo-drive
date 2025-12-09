@@ -46,12 +46,11 @@ function App() {
         </div>
 
         {/* Navigation */}
-        <nav> 
-          <Link to="/">Home</Link> 
-          <Link to="/Services">Services</Link> 
-          <Link to="/About">About</Link> 
-          <Link to="/Contact">Contact</Link> 
-          {/* <-- redirection vers page Contact */} 
+        <nav className="nav-links">
+          <Link to="/" onClick={() => setMenuOpen(false)}>Home</Link>
+          <Link to="/Services" onClick={() => setMenuOpen(false)}>Services</Link>
+          <Link to="/About" onClick={() => setMenuOpen(false)}>About</Link>
+          <Link to="/Contact" onClick={() => setMenuOpen(false)}>Contact</Link>
         </nav>
       </header>
       <Routes>
