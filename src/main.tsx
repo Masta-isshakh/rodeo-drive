@@ -5,14 +5,14 @@ import "./index.css";
 import { Amplify } from "aws-amplify";
 import outputs from "../amplify_outputs.json";
 import { BrowserRouter } from "react-router-dom";
-import HomePage from "./Homepage.tsx";
+import App from "./App.tsx";
 
 Amplify.configure(outputs);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <BrowserRouter>
-    <HomePage/>
+      <App/>
     </BrowserRouter>
   </React.StrictMode>
 );
