@@ -1,59 +1,66 @@
 
 import "./services.css";
 
-interface Service {
-  title: string;
-  description: string;
-  imageUrl: string;
-}
 
-const services: Service[] = [
-  { title: "Professional Polish", description: "High‑quality polishing for long‑lasting shine.", imageUrl: "https://c.pxhere.com/images/3b/9b/car_polished_sports_vehicle_auto-1712320.jpg!d" },
-  { title: "Ceramic Coating", description: "Premium protection with advanced ceramic technology.", imageUrl: "https://c.pxhere.com/images/78/fa/car_mercedes_slk_auto_transport_design_transportation_luxury-1382707.jpg!d" },
-  { title: "Body Protection", description: "Top‑tier protection for body paint and finishes.", imageUrl: "https://c.pxhere.com/images/16/4f/car_mercedes_slk_auto_transport_design_transportation_luxury-1382702.jpg!d" },
-  { title: "Color Protection", description: "Keep your car’s color vibrant and protected for years.", imageUrl: "https://c.pxhere.com/images/69/9b/car_mercedes_slk_auto_transport_design_transportation_luxury-1382719.jpg!d" },
-  { title: "Rubberized Paint", description: "Durable rubberized paint for extra body protection.", imageUrl: "https://c.pxhere.com/images/9a/b7/car_mercedes_slk_auto_transport_design_transportation_luxury-1382725.jpg!d" },
-  { title: "Smart Repair", description: "Quick and precise repairs for minor damages and imperfections.", imageUrl: "https://c.pxhere.com/images/f2/bb/c984ac7373f55071e32a7b6d7fdf-1700100.jpg!d" },
-  { title: "Paintless Dent Repair", description: "Fix dents without repainting — keeps original paint intact.", imageUrl: "https://c.pxhere.com/images/78/fa/car_mercedes_slk_auto_transport_design_transportation_luxury-1382707.jpg!d" },
-  { title: "Paintless Dent Adjustment", description: "Professional dent adjustment without affecting paint quality.", imageUrl: "https://c.pxhere.com/images/16/4f/car_mercedes_slk_auto_transport_design_transportation_luxury-1382702.jpg!d" },
-  { title: "Protective Wrap Color Change", description: "Change your car’s color with a protective wrap — stylish & safe.", imageUrl: "https://c.pxhere.com/images/3b/9b/car_polished_sports_vehicle_auto-1712320.jpg!d" },
-  { title: "Rubberized Paint Color Change", description: "Custom paint‑color change using durable rubberized coating.", imageUrl: "https://c.pxhere.com/images/69/9b/car_mercedes_slk_auto_transport_design_transportation_luxury-1382719.jpg!d" },
-  { title: "Interior Polishing", description: "Detailed polishing of interiors — leather, dashboard, trims.", imageUrl: "https://c.pxhere.com/images/f2/bb/c984ac7373f55071e32a7b6d7fdf-1700100.jpg!d" },
-  { title: "Exterior Polishing", description: "Professional exterior polishing for a showroom‑finish shine.", imageUrl: "https://c.pxhere.com/images/16/4f/car_mercedes_slk_auto_transport_design_transportation_luxury-1382702.jpg!d" },
-  { title: "Nano Ceramic Coating for Rims", description: "Advanced nano‑ceramic coating to protect rims from dust & wear.", imageUrl: "https://c.pxhere.com/images/78/fa/car_mercedes_slk_auto_transport_design_transportation_luxury-1382707.jpg!d" },
-  { title: "Nano Ceramic Coating for Body", description: "Full‑body nano‑ceramic coating for long‑lasting protection and shine.", imageUrl: "https://c.pxhere.com/images/69/9b/car_mercedes_slk_auto_transport_design_transportation_luxury-1382719.jpg!d" },
-  { title: "Nano Leather Protection", description: "Protect interior leather from stains, wear and UV damage.", imageUrl: "https://c.pxhere.com/images/3b/9b/car_polished_sports_vehicle_auto-1712320.jpg!d" },
-  { title: "Front Windshield Protection", description: "Nano coating for windshield — scratch, UV and weather protection.", imageUrl: "https://c.pxhere.com/images/16/4f/car_mercedes_slk_auto_transport_design_transportation_luxury-1382702.jpg!d" },
-  { title: "Black Edition Vehicle Conversion", description: "Transform your vehicle into a premium Black Edition — look & feel.", imageUrl: "https://c.pxhere.com/images/78/fa/car_mercedes_slk_auto_transport_design_transportation_luxury-1382707.jpg!d" },
-  { title: "Defender Customization (As Requested)", description: "Customized modifications for Defender vehicles per request.", imageUrl: "https://c.pxhere.com/images/69/9b/car_mercedes_slk_auto_transport_design_transportation_luxury-1382719.jpg!d" },
-  { title: "Car Accessories Painting", description: "Professional painting of car accessories and trims.", imageUrl: "https://c.pxhere.com/images/f2/bb/c984ac7373f55071e32a7b6d7fdf-1700100.jpg!d" },
+// Liste des services avec images de haute qualité
+const services = [
+  { title: "Polish", image: "https://images.unsplash.com/photo-1612620219325-2b0a3d76f028?auto=format&fit=crop&w=800&q=80" },
+  { title: "Ceramic Coating", image: "https://images.unsplash.com/photo-1616576509535-b7e8b4e6f2a4?auto=format&fit=crop&w=800&q=80" },
+  { title: "Protection", image: "https://images.unsplash.com/photo-1606495706744-828d3f17bff6?auto=format&fit=crop&w=800&q=80" },
+  { title: "Color Protection", image: "https://images.unsplash.com/photo-1590524231556-ec6de28b1742?auto=format&fit=crop&w=800&q=80" },
+  { title: "Rubberized Paint", image: "https://images.unsplash.com/photo-1616628180753-f5c5c0a1b50a?auto=format&fit=crop&w=800&q=80" },
+  { title: "Smart Repair", image: "https://images.unsplash.com/photo-1622495892131-7e7022a5b7a1?auto=format&fit=crop&w=800&q=80" },
+  { title: "Paintless Dent Repair", image: "https://images.unsplash.com/photo-1622495858324-49e8dcda8361?auto=format&fit=crop&w=800&q=80" },
+  { title: "Paintless Dent Adjustment", image: "https://images.unsplash.com/photo-1600210494586-01680edca63c?auto=format&fit=crop&w=800&q=80" },
+  { title: "Protective Wrap Color Change", image: "https://images.unsplash.com/photo-1616627180231-4c2c257f0d2d?auto=format&fit=crop&w=800&q=80" },
+  { title: "Rubberized Paint Color Change", image: "https://images.unsplash.com/photo-1616627509613-6e29012c83a5?auto=format&fit=crop&w=800&q=80" },
+  { title: "Interior Polishing", image: "https://images.unsplash.com/photo-1616627304354-5bcbb26f9e9a?auto=format&fit=crop&w=800&q=80" },
+  { title: "Exterior Polishing", image: "https://images.unsplash.com/photo-1616627389322-98d9e7fffe1d?auto=format&fit=crop&w=800&q=80" },
+  { title: "Nano Ceramic Coating for Rims", image: "https://images.unsplash.com/photo-1616627140977-3c012bde3f5b?auto=format&fit=crop&w=800&q=80" },
+  { title: "Nano Ceramic Coating for Body", image: "https://images.unsplash.com/photo-1616627250215-3ffedbc7de09?auto=format&fit=crop&w=800&q=80" },
+  { title: "Nano Leather Protection", image: "https://images.unsplash.com/photo-1616627120035-8eb3f1a4f5de?auto=format&fit=crop&w=800&q=80" },
+  { title: "Front Windshield Protection", image: "https://images.unsplash.com/photo-1616627160541-b22a3e2fa0b0?auto=format&fit=crop&w=800&q=80" },
+  { title: "Black Edition Vehicle Conversion", image: "https://images.unsplash.com/photo-1616627100035-7fa0a3e6a4e8?auto=format&fit=crop&w=800&q=80" },
+  { title: "Defender Customization", image: "https://images.unsplash.com/photo-1616627200031-3b0f0f9a5f1c?auto=format&fit=crop&w=800&q=80" },
+  { title: "Car Accessories Painting", image: "https://images.unsplash.com/photo-1616627280035-4c2c3e7a5f3a?auto=format&fit=crop&w=800&q=80" },
 ];
 
-export default function ServicesPage() {
+export default function Services() {
   return (
-    <div className="services-page">
-      <header className="services-hero">
-        <h1>Our Premium Car Services</h1>
-        <p>Delivering Excellence, Protection, and Shine for Every Vehicle</p>
-      </header>
+    <div>
+      {/* New Hero Section instead of header */}
+      <section
+        style={{
+          backgroundImage: "url('https://images.unsplash.com/photo-1616627304354-5bcbb26f9e9a?auto=format&fit=crop&w=1600&q=80')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          height: "350px",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          color: "#fff",
+          textShadow: "0 0 15px rgba(0,0,0,0.7)",
+        }}
+      >
+        <h1 style={{ fontSize: "48px", fontWeight: "bold" }}>Our Premium Services</h1>
+      </section>
 
-      <section className="services-grid">
-        {services.map((service, idx) => (
-          <div className="service-card" key={idx}>
-            <img src={service.imageUrl} alt={service.title} loading="lazy" />
+      {/* Services Grid */}
+      <div className="services-container">
+        {services.map((service, index) => (
+          <div className="service-card" key={index}>
+            <img src={service.image} alt={service.title} />
             <h3>{service.title}</h3>
-            <p>{service.description}</p>
           </div>
         ))}
-      </section>
+      </div>
 
-      <section className="services-cta">
-        <h2>Book Your Premium Service Today</h2>
-        <p>Contact us now to schedule your appointment or consultation.</p>
-        <a href="/contact" className="cta-btn">Book an Appointment</a>
+      {/* CTA Section */}
+      <section className="cta-section">
+        <h2>Experience Premium Car Care Today</h2>
+        <p>Book your appointment now and protect your vehicle like never before.</p>
+        <a className="cta-btn" href="/Contact">Book an Appointment</a>
       </section>
-
-      <footer>© 2025 Rodeo Drive — All Rights Reserved</footer>
     </div>
   );
 }
