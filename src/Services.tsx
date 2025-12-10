@@ -1,7 +1,5 @@
-
 import "./services.css";
 import { useTranslation } from "react-i18next";
-
 
 // Liste des services avec images de haute qualité
 const serviceImages: Record<string, string> = {
@@ -25,9 +23,7 @@ const serviceImages: Record<string, string> = {
 export default function ServicesPage() {
   const { t } = useTranslation();
 
-  const keys = Object.keys(t("services.list", { returnObjects: true })) as string[]; // TS: translation object
-
-  // fallback if returnObjects not supported: list keys from JSON
+  // Liste des services (la source principale)
   const serviceKeys = [
     "polish","ceramic_coating","protection","color_protection","rubberized_paint","smart_repair",
     "paintless_dent_repair","paintless_dent_adjustment","protective_wrap","rubberized_paint_color_change",
@@ -43,9 +39,11 @@ export default function ServicesPage() {
       <div className="services-grid">
         {serviceKeys.map((k) => (
           <div className="service-card" key={k}>
-            <img src={serviceImages[k] || serviceImages.polish} alt={t(`services.list.${k}`)} />
+            <img 
+              src={serviceImages[k] || serviceImages.polish} 
+              alt={t(`services.list.${k}`)} 
+            />
             <h3>{t(`services.list.${k}`)}</h3>
-            <p>{/* optional short desc could be added */}</p>
           </div>
         ))}
       </div>
