@@ -11,6 +11,8 @@ import { useTranslation } from "react-i18next";
 import i18n from "./i18n.ts";
 import "./i18n";
 import { useNavigate } from "react-router-dom";
+import AdminPage from "./Admin.tsx";
+import LoginPage from "./Ligin.tsx";
 
 
 
@@ -93,6 +95,8 @@ function App() {
         <Route path="/services" element={<Services/>} />
         <Route path="/about" element={<About/>} />
         <Route path="/contact" element={<Contact/>} />
+                  <Route path="/admin" element={<AdminPage />} />
+          <Route path="/login" element={<LoginPage />} />
       </Routes>
     </div>
   );
