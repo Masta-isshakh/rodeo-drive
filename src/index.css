@@ -26,6 +26,22 @@ header .logo {
   letter-spacing: 1px;
   color: #ac9f9f;
 }
+.lang-btn {
+  background: #e60000;
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 6px;
+  margin-right: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.lang-btn:hover {
+  background: #b30000;
+}
+
 
 header nav a {
   color: #fff;

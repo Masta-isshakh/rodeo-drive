@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { generateClient } from "aws-amplify/data";
 import "./contact.css";
+import { useTranslation } from "react-i18next";
+
 
 const client = generateClient();
 
@@ -9,6 +11,7 @@ export default function ContactPage() {
   type Message = { id: string; content: string };
   const [messages, setMessages] = useState<Message[]>([]);
   const [loading, setLoading] = useState(true);
+    const { t } = useTranslation();
 
   useEffect(() => {
     const loadMessages = async () => {
@@ -42,46 +45,36 @@ export default function ContactPage() {
 
   return (
     <div className="contact-page">
-      <h2>Contact Us</h2>
-      <p>Send us a message or reach us directly via WhatsApp or call.</p>
+      <h2>{t("contact.title")}</h2>
+      <p>{t("contact.subtitle")}</p>
 
       <div className="contact-form">
         <textarea
-          placeholder="Write your message here..."
+          placeholder={t("contact.message")}
           value={msg}
           onChange={(e) => setMsg(e.target.value)}
-        ></textarea>
-
-        <button onClick={handleSend}>Send</button>
+        />
+        <button onClick={handleSend}>{t("contact.send")}</button>
       </div>
 
       <div className="contact-options">
-        <a
-          href="https://wa.me/97455708226"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="whatsapp-btn"
-        >
-          WhatsApp
+        <a href="https://wa.me/974XXXXXXXX" target="_blank" rel="noreferrer">
+          {t("contact.whatsapp")}
         </a>
-
-        <a href="tel:+974XXXXXXXX" className="call-btn">
-          Call Us
-        </a>
+        <a href="tel:+974XXXXXXXX">{t("contact.call")}</a>
       </div>
 
       <div className="chat-box">
-        <h3>Messages</h3>
-
-        {loading && <p>Loading messages...</p>}
-
-        {!loading && messages.length === 0 && <p>No messages yet.</p>}
-
-        {messages.map((m) => (
-          <div key={m.id} className="chat-message">
-            {m.content}
-          </div>
-        ))}
+        <h3>{t("admin.title")}</h3>
+        {messages.length === 0 ? (
+          <div>{t("admin.no_messages")}</div>
+        ) : (
+          messages.map((m: any) => (
+            <div className="chat-message" key={m.id || Math.random()}>
+              {m.content}
+            </div>
+          ))
+        )}
       </div>
     </div>
   );

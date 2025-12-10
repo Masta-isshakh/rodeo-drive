@@ -1,66 +1,54 @@
 
 import "./services.css";
+import { useTranslation } from "react-i18next";
 
 
 // Liste des services avec images de haute qualité
-const services = [
-  { title: "Polish", image: "https://images.unsplash.com/photo-1612620219325-2b0a3d76f028?auto=format&fit=crop&w=800&q=80" },
-  { title: "Ceramic Coating", image: "https://images.unsplash.com/photo-1616576509535-b7e8b4e6f2a4?auto=format&fit=crop&w=800&q=80" },
-  { title: "Protection", image: "https://images.unsplash.com/photo-1606495706744-828d3f17bff6?auto=format&fit=crop&w=800&q=80" },
-  { title: "Color Protection", image: "https://images.unsplash.com/photo-1590524231556-ec6de28b1742?auto=format&fit=crop&w=800&q=80" },
-  { title: "Rubberized Paint", image: "https://images.unsplash.com/photo-1616628180753-f5c5c0a1b50a?auto=format&fit=crop&w=800&q=80" },
-  { title: "Smart Repair", image: "https://images.unsplash.com/photo-1622495892131-7e7022a5b7a1?auto=format&fit=crop&w=800&q=80" },
-  { title: "Paintless Dent Repair", image: "https://images.unsplash.com/photo-1622495858324-49e8dcda8361?auto=format&fit=crop&w=800&q=80" },
-  { title: "Paintless Dent Adjustment", image: "https://images.unsplash.com/photo-1600210494586-01680edca63c?auto=format&fit=crop&w=800&q=80" },
-  { title: "Protective Wrap Color Change", image: "https://images.unsplash.com/photo-1616627180231-4c2c257f0d2d?auto=format&fit=crop&w=800&q=80" },
-  { title: "Rubberized Paint Color Change", image: "https://images.unsplash.com/photo-1616627509613-6e29012c83a5?auto=format&fit=crop&w=800&q=80" },
-  { title: "Interior Polishing", image: "https://images.unsplash.com/photo-1616627304354-5bcbb26f9e9a?auto=format&fit=crop&w=800&q=80" },
-  { title: "Exterior Polishing", image: "https://images.unsplash.com/photo-1616627389322-98d9e7fffe1d?auto=format&fit=crop&w=800&q=80" },
-  { title: "Nano Ceramic Coating for Rims", image: "https://images.unsplash.com/photo-1616627140977-3c012bde3f5b?auto=format&fit=crop&w=800&q=80" },
-  { title: "Nano Ceramic Coating for Body", image: "https://images.unsplash.com/photo-1616627250215-3ffedbc7de09?auto=format&fit=crop&w=800&q=80" },
-  { title: "Nano Leather Protection", image: "https://images.unsplash.com/photo-1616627120035-8eb3f1a4f5de?auto=format&fit=crop&w=800&q=80" },
-  { title: "Front Windshield Protection", image: "https://images.unsplash.com/photo-1616627160541-b22a3e2fa0b0?auto=format&fit=crop&w=800&q=80" },
-  { title: "Black Edition Vehicle Conversion", image: "https://images.unsplash.com/photo-1616627100035-7fa0a3e6a4e8?auto=format&fit=crop&w=800&q=80" },
-  { title: "Defender Customization", image: "https://images.unsplash.com/photo-1616627200031-3b0f0f9a5f1c?auto=format&fit=crop&w=800&q=80" },
-  { title: "Car Accessories Painting", image: "https://images.unsplash.com/photo-1616627280035-4c2c3e7a5f3a?auto=format&fit=crop&w=800&q=80" },
-];
+const serviceImages: Record<string, string> = {
+  polish: "https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=1200&q=60",
+  ceramic_coating: "https://images.unsplash.com/photo-1523731407965-2430cd12f5e4?auto=format&fit=crop&w=1200&q=60",
+  protection: "https://images.unsplash.com/photo-1549921296-3f9a3f1f8a9f?auto=format&fit=crop&w=1200&q=60",
+  color_protection: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=60",
+  rubberized_paint: "https://images.unsplash.com/photo-1542365887-1b8b6a7f8b5b?auto=format&fit=crop&w=1200&q=60",
+  smart_repair: "https://images.unsplash.com/photo-1549921294-df7c2b93d7f0?auto=format&fit=crop&w=1200&q=60",
+  paintless_dent_repair: "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=1200&q=60",
+  protective_wrap: "https://images.unsplash.com/photo-1518655048521-f130df041f66?auto=format&fit=crop&w=1200&q=60",
+  nano_rims: "https://images.unsplash.com/photo-1517863819182-1f4e0f1a8f4d?auto=format&fit=crop&w=1200&q=60",
+  nano_body: "https://images.unsplash.com/photo-1529400971008-f566de0e6dfc?auto=format&fit=crop&w=1200&q=60",
+  nano_leather: "https://images.unsplash.com/photo-1520975917670-95f3f7f6d66c?auto=format&fit=crop&w=1200&q=60",
+  front_windshield: "https://images.unsplash.com/photo-1514790193030-c89d266d5a9d?auto=format&fit=crop&w=1200&q=60",
+  black_edition: "https://images.unsplash.com/photo-1516117172878-fd2c41f4a759?auto=format&fit=crop&w=1200&q=60",
+  defender_custom: "https://images.unsplash.com/photo-1519669556871-1e52aede2b61?auto=format&fit=crop&w=1200&q=60",
+  car_accessories_painting: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=60"
+};
 
-export default function Services() {
+export default function ServicesPage() {
+  const { t } = useTranslation();
+
+  const keys = Object.keys(t("services.list", { returnObjects: true })) as string[]; // TS: translation object
+
+  // fallback if returnObjects not supported: list keys from JSON
+  const serviceKeys = [
+    "polish","ceramic_coating","protection","color_protection","rubberized_paint","smart_repair",
+    "paintless_dent_repair","paintless_dent_adjustment","protective_wrap","rubberized_paint_color_change",
+    "interior_polishing","exterior_polishing","nano_rims","nano_body","nano_leather",
+    "front_windshield","black_edition","defender_custom","car_accessories_painting"
+  ];
+
   return (
-    <div>
-      {/* New Hero Section instead of header */}
-      <section
-        style={{
-          backgroundImage: "url('https://images.unsplash.com/photo-1616627304354-5bcbb26f9e9a?auto=format&fit=crop&w=1600&q=80')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          height: "350px",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          color: "#fff",
-          textShadow: "0 0 15px rgba(0,0,0,0.7)",
-        }}
-      >
-        <h1 style={{ fontSize: "48px", fontWeight: "bold" }}>Our Premium Services</h1>
-      </section>
+    <div className="services-page">
+      <h1>{t("services.page_title")}</h1>
+      <p>{t("services.intro")}</p>
 
-      {/* Services Grid */}
-      <div className="services-container">
-        {services.map((service, index) => (
-          <div className="service-card" key={index}>
-            <img src={service.image} alt={service.title} />
-            <h3>{service.title}</h3>
+      <div className="services-grid">
+        {serviceKeys.map((k) => (
+          <div className="service-card" key={k}>
+            <img src={serviceImages[k] || serviceImages.polish} alt={t(`services.list.${k}`)} />
+            <h3>{t(`services.list.${k}`)}</h3>
+            <p>{/* optional short desc could be added */}</p>
           </div>
         ))}
       </div>
-
-      {/* CTA Section */}
-      <section className="cta-section">
-        <h2>Experience Premium Car Care Today</h2>
-        <p>Book your appointment now and protect your vehicle like never before.</p>
-        <a className="cta-btn" href="/Contact">Book an Appointment</a>
-      </section>
     </div>
   );
 }
