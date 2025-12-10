@@ -10,7 +10,7 @@ export default function ContactPage() {
   const [msg, setMsg] = useState("");
   type Message = { id: string; content: string };
   const [messages, setMessages] = useState<Message[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [_loading, setLoading] = useState(true);
     const { t } = useTranslation();
 
   useEffect(() => {
