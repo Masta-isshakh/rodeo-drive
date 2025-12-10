@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./i18n.js";
+import "./auth-theme.css";
+import '@aws-amplify/ui-react/styles.css';
 
 
 import "./index.css";
