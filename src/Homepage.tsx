@@ -8,16 +8,26 @@ export default function HomePage() {
     <div>
 
       {/* HERO / VIDEO CAROUSEL */}
-      <div className="video-carousel">
-        <video autoPlay loop muted>
-          <source src="https://mastatiktok.s3.us-east-1.amazonaws.com/video.mp4" type="video/mp4" />
-        </video>
+{/* HERO / VIDEO CAROUSEL */}
+<div className="video-carousel">
+  <video
+    src="https://mastatiktok.s3.us-east-1.amazonaws.com/video.mp4"
+    autoPlay
+    loop
+    muted
+    playsInline
+    preload="auto"
+    poster="https://mastatiktok.s3.us-east-1.amazonaws.com/video-poster.jpg"
+  >
+    Votre navigateur ne supporte pas la vidéo.
+  </video>
 
-        <div className="carousel-text">
-          <h1>{t("home.hero_title")}</h1>
-          <p>{t("home.hero_subtitle")}</p>
-        </div>
-      </div>
+  <div className="carousel-text">
+    <h1>{t("home.hero_title")}</h1>
+    <p>{t("home.hero_subtitle")}</p>
+  </div>
+</div>
+
 
 
 

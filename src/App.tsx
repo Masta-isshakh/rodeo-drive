@@ -46,50 +46,49 @@ function App() {
     <div>
       
             {/* Header */}
-    <header className={menuOpen ? "open" : ""}>
-      <div className="logo">
-        <img
-          src="https://mastatiktok.s3.us-east-1.amazonaws.com/logo.jpeg"
-          alt="Rodeo Drive Logo"
-          className="logo-img"
-        />
-        <span>Rodeo Drive</span>
-      </div>
+<header className={menuOpen ? "menu-open" : ""}>
+  <div className="logo">
+    <img
+      src="https://mastatiktok.s3.us-east-1.amazonaws.com/logo.jpeg"
+      alt="Rodeo Drive Logo"
+      className="logo-img"
+    />
+    <span>Rodeo Drive</span>
+  </div>
 
-      <div
-        className="menu-toggle"
-        onClick={() => setMenuOpen(!menuOpen)}
-        aria-label="menu"
-      >
-        <span />
-        <span />
-        <span />
-      </div>
+  <div
+    className="menu-toggle"
+    onClick={() => setMenuOpen(!menuOpen)}
+    aria-label="menu"
+  >
+    <span />
+    <span />
+    <span />
+  </div>
 
-      <nav className="nav-links" role="navigation" aria-label="main">
-        <Link to="/">{t("navbar.home")}</Link>
-        <Link to="/services">{t("navbar.services")}</Link>
-        <Link to="/about">{t("navbar.about")}</Link>
-        <Link to="/contact">{t("navbar.contact")}</Link>
-        <Link to="/admin">{t("navbar.admin")}</Link>
-        <button
-          className="lang-btn"
-          onClick={switchLang}
-          style={{ marginLeft: 12 }}
-        >
-          {i18n.language === "en" ? "AR" : "EN"}
-        </button>
-        <button
-          className="login-btn"
-          onClick={() => {
-            navigate("/Login");
-            setMenuOpen(false);
-          }}
-        >
-          {t("navbar.login")}
-        </button>
-      </nav>
-    </header>
+  <nav className="nav-links">
+    <Link to="/">{t("navbar.home")}</Link>
+    <Link to="/services">{t("navbar.services")}</Link>
+    <Link to="/about">{t("navbar.about")}</Link>
+    <Link to="/contact">{t("navbar.contact")}</Link>
+    <Link to="/admin">{t("navbar.admin")}</Link>
+
+    <button className="lang-btn" onClick={switchLang}>
+      {i18n.language === "en" ? "AR" : "EN"}
+    </button>
+
+    <button
+      className="login-btn"
+      onClick={() => {
+        navigate("/login");
+        setMenuOpen(false);
+      }}
+    >
+      {t("navbar.login")}
+    </button>
+  </nav>
+</header>
+
       <Routes>
         <Route path="/" element={<HomePage/>} />
         <Route path="/services" element={<Services/>} />
