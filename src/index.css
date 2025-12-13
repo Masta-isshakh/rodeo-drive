@@ -172,6 +172,9 @@ header.menu-open .menu-toggle span:nth-child(3) {
   height: 100%;
   object-fit: cover;
   opacity: 0.5;
+
+    -webkit-transform: translateZ(0);
+  transform: translateZ(0);
 }
 
 .carousel-text {

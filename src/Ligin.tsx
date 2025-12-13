@@ -1,11 +1,13 @@
 import { Authenticator } from "@aws-amplify/ui-react";
 import { useNavigate } from "react-router-dom";
 
+
+
 export default function LoginPage() {
   const navigate = useNavigate();
 
   return (
-    <div style={{ maxWidth: 420, margin: "40px auto" }}>
+    <div>
       <Authenticator>
         {({ signOut, user }) => (
           <main style={{ textAlign: "center" }}>
